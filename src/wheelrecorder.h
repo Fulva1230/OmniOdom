@@ -6,19 +6,19 @@
 #define OMNIODOM_WHEELRECORDER_H
 
 #include "anglesensor.h"
+#include "wheelrecord.h"
 
 namespace omniodom {
     class WheelRecorder {
     public:
-        WheelRecorder(AngleSensor &angleSensor);
 
     public:
-        void record(){
-            //TODO
-        };
+        WheelRecorder(omniodom::AngleSensor &angleSensor, omniodom::WheelRecord &wheelRecord);
+
+        void record();;
     private:
         AngleSensor &angleSensor;
-
+        WheelRecord &wheelRecord;
     };
 }
 

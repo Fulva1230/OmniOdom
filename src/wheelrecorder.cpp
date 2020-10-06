@@ -4,4 +4,9 @@
 
 #include "wheelrecorder.h"
 
-omniodom::WheelRecorder::WheelRecorder(omniodom::AngleSensor &angleSensor) : angleSensor(angleSensor) {}
+void omniodom::WheelRecorder::record() {
+    wheelRecord.insertRecord(angleSensor.read());
+}
+
+omniodom::WheelRecorder::WheelRecorder(omniodom::AngleSensor &angleSensor, omniodom::WheelRecord &wheelRecord)
+        : angleSensor(angleSensor), wheelRecord(wheelRecord) {}

@@ -10,7 +10,7 @@ namespace omniodom {
     public:
         virtual ~AngleSensor() = 0;
 
-        void virtual record() = 0;
+        virtual double read() = 0;
     };
 }
 
