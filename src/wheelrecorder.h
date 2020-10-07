@@ -15,7 +15,7 @@ namespace omniodom {
     public:
         WheelRecorder(omniodom::AngleSensor &angleSensor, omniodom::WheelRecord &wheelRecord);
 
-        void record();;
+        void record();
     private:
         AngleSensor &angleSensor;
         WheelRecord &wheelRecord;
