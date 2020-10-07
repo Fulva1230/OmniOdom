@@ -51,12 +51,12 @@ std::optional<WheelState> omniodom::WheelRecord::latestState() {
         return std::optional<WheelState>{};
     }
 
-    return interpolate(timer.now(), std::cbegin(states));
+    return interpolate(timerIns.now(), std::cbegin(states));
 }
 
-omniodom::WheelRecord::WheelRecord(omniodom::timer &timer) : timer(timer) {}
+omniodom::WheelRecord::WheelRecord(omniodom::timer &timer) : timerIns(timer) {}
 
 void omniodom::WheelRecord::insertRecord(double angle) {
-    states.push_front(WheelState{angle, timer.now()});
+    states.push_front(WheelState{angle, timerIns.now()});
 }
 

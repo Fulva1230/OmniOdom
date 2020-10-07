@@ -25,7 +25,7 @@ namespace omniodom {
 
     private:
 
-        timer &timer;
+        timer &timerIns;
         std::deque<WheelState> states{};
 
         std::optional<WheelState> interpolate(long timeStamped, std::deque<WheelState>::const_iterator iter) const;
