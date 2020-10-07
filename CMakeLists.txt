@@ -11,6 +11,8 @@ FetchContent_Declare(
 )
 FetchContent_MakeAvailable(googletest)
 
+include(GoogleTest)
+
 find_package(Eigen3 MODULE REQUIRED)
 
 add_library(omniodom src/timer.h src/wheelrecorder.cpp src/wheelrecorder.h src/anglesensor.h src/wheelstate.h src/wheelrecord.cpp src/wheelrecord.h)
@@ -19,3 +21,4 @@ target_link_libraries(omniodom Eigen3::Eigen)
 
 add_executable(odomtest test/odomtest.cpp)
 target_link_libraries(odomtest gtest_main gmock omniodom)
+gtest_discover_tests(odomtest)
